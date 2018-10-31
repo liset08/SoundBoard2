@@ -1,25 +1,22 @@
 //
-//  ViewController.swift
+//  SnapsViewController.swift
 //  Snapchat
 //
 //  Created by Mac Tecsup on 24/10/18.
 //  Copyright © 2018 Cayhualla. All rights reserved.
 //
 
-import UIKit
+import  UIKit
 
-class ViewController: UIViewController {
-
+class SnapsViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func cerrarSesionTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
-
-
+    
 }
-
