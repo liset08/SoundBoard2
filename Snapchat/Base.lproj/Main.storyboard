@@ -82,7 +82,20 @@
                     <view key="view" contentMode="scaleToFill" id="lf2-Pm-8jR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KR7-pS-zZz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KR7-pS-zZz" firstAttribute="leading" secondItem="BIJ-GG-yop" secondAttribute="leading" id="BPX-Mz-eD4"/>
+                            <constraint firstItem="BIJ-GG-yop" firstAttribute="trailing" secondItem="KR7-pS-zZz" secondAttribute="trailing" id="J18-IA-bGx"/>
+                            <constraint firstItem="KR7-pS-zZz" firstAttribute="centerX" secondItem="lf2-Pm-8jR" secondAttribute="centerX" id="KaT-1P-i0t"/>
+                            <constraint firstItem="KR7-pS-zZz" firstAttribute="top" secondItem="BIJ-GG-yop" secondAttribute="top" id="NDn-dE-M3H"/>
+                            <constraint firstItem="BIJ-GG-yop" firstAttribute="bottom" secondItem="KR7-pS-zZz" secondAttribute="bottom" id="qf8-KJ-YK7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BIJ-GG-yop"/>
                     </view>
                     <navigationItem key="navigationItem" id="ued-iP-X9H">
@@ -97,10 +110,54 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="KR7-pS-zZz" id="FTa-wH-HoG"/>
+                        <segue destination="GDZ-tX-wTH" kind="show" identifier="versnapsegue" id="aNo-ZM-4nA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4N-ir-U8l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1743.2" y="61.619190404797607"/>
+        </scene>
+        <!--Ver Snaps View Controller-->
+        <scene sceneID="bdg-27-6Vc">
+            <objects>
+                <viewController id="GDZ-tX-wTH" customClass="VerSnapsViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eke-ZU-3sf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8z5-Cx-3bn">
+                                <rect key="frame" x="10" y="74" width="355" height="533"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTl-9q-Ny9">
+                                <rect key="frame" x="166" y="626" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8z5-Cx-3bn" firstAttribute="leading" secondItem="2PV-Ls-qxf" secondAttribute="leading" constant="10" id="2cB-f2-Dhh"/>
+                            <constraint firstItem="8z5-Cx-3bn" firstAttribute="centerX" secondItem="Eke-ZU-3sf" secondAttribute="centerX" id="5qG-qk-PJz"/>
+                            <constraint firstItem="pTl-9q-Ny9" firstAttribute="centerX" secondItem="Eke-ZU-3sf" secondAttribute="centerX" id="PJ6-6P-PnE"/>
+                            <constraint firstItem="2PV-Ls-qxf" firstAttribute="bottom" secondItem="8z5-Cx-3bn" secondAttribute="bottom" constant="60" id="Uax-oA-KJX"/>
+                            <constraint firstItem="8z5-Cx-3bn" firstAttribute="top" secondItem="2PV-Ls-qxf" secondAttribute="top" constant="10" id="eCo-fy-AE2"/>
+                            <constraint firstItem="pTl-9q-Ny9" firstAttribute="top" secondItem="8z5-Cx-3bn" secondAttribute="bottom" constant="19" id="iXQ-Zb-yUm"/>
+                            <constraint firstItem="2PV-Ls-qxf" firstAttribute="trailing" secondItem="8z5-Cx-3bn" secondAttribute="trailing" constant="10" id="j2K-hx-avW"/>
+                            <constraint firstItem="2PV-Ls-qxf" firstAttribute="bottom" secondItem="pTl-9q-Ny9" secondAttribute="bottom" constant="20" id="lLP-EW-dPi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2PV-Ls-qxf"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="8z5-Cx-3bn" id="Zzf-7P-GuK"/>
+                        <outlet property="label" destination="pTl-9q-Ny9" id="4zB-g3-rIk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nn0-lW-cyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1741.5999999999999" y="870.31484257871068"/>
         </scene>
         <!--Imagen View Controller-->
         <scene sceneID="vit-3s-Xmh">
@@ -134,14 +191,25 @@
                                     <action selector="elegirContactoBoton:" destination="ueC-Wg-mBd" eventType="touchUpInside" id="bdd-Df-Wwe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4y-BP-CQQ">
+                                <rect key="frame" x="164" y="329" width="47" height="30"/>
+                                <state key="normal" title="Grabar"/>
+                                <connections>
+                                    <action selector="recordTapped:" destination="ueC-Wg-mBd" eventType="touchUpInside" id="OSu-8L-DJf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Msq-yo-Zjg" firstAttribute="trailing" secondItem="Y4y-BP-CQQ" secondAttribute="trailing" constant="164" id="3Id-9g-Ucx"/>
                             <constraint firstItem="cs0-0a-wvn" firstAttribute="top" secondItem="Msq-yo-Zjg" secondAttribute="top" constant="20" id="DjA-yL-mbO"/>
                             <constraint firstItem="JBd-P2-YRw" firstAttribute="centerX" secondItem="suc-4b-0fJ" secondAttribute="centerX" id="IMx-2k-L3d"/>
                             <constraint firstItem="xCP-3s-pvG" firstAttribute="centerX" secondItem="suc-4b-0fJ" secondAttribute="centerX" id="L91-UA-Sdf"/>
                             <constraint firstItem="xCP-3s-pvG" firstAttribute="top" secondItem="cs0-0a-wvn" secondAttribute="bottom" constant="15" id="PZf-uw-WoX"/>
                             <constraint firstItem="JBd-P2-YRw" firstAttribute="top" secondItem="xCP-3s-pvG" secondAttribute="bottom" constant="20" id="ZgE-a8-pw5"/>
+                            <constraint firstItem="Y4y-BP-CQQ" firstAttribute="centerX" secondItem="suc-4b-0fJ" secondAttribute="centerX" id="aUs-ft-gsK"/>
+                            <constraint firstItem="Y4y-BP-CQQ" firstAttribute="leading" secondItem="Msq-yo-Zjg" secondAttribute="leading" constant="164" id="acN-BK-xOc"/>
+                            <constraint firstItem="Y4y-BP-CQQ" firstAttribute="top" secondItem="JBd-P2-YRw" secondAttribute="bottom" constant="22" id="cW1-Dp-fo7"/>
                             <constraint firstItem="cs0-0a-wvn" firstAttribute="centerX" secondItem="suc-4b-0fJ" secondAttribute="centerX" id="eyz-kg-xKD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Msq-yo-Zjg"/>
@@ -157,6 +225,7 @@
                         <outlet property="descripcionTextField" destination="xCP-3s-pvG" id="phV-3D-LDq"/>
                         <outlet property="elegirContactoBoton" destination="JBd-P2-YRw" id="i9Y-5O-Blg"/>
                         <outlet property="imageView" destination="cs0-0a-wvn" id="w1H-bj-cUo"/>
+                        <outlet property="recordButton" destination="Y4y-BP-CQQ" id="Y3s-8a-QYf"/>
                         <segue destination="4ip-te-pa5" kind="show" identifier="seleccionarContactoSegue" id="CZs-N7-oXX"/>
                     </connections>
                 </viewController>
